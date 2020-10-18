@@ -19,8 +19,8 @@ function generatePassword (){
 
 // prompt user
 var length = parseInt(prompt("How many characters would you like your password to contain?"))
-if(length < 8) {
-  alert("Needs at least 8 characters");
+if(length < 8 || length > 128) {
+  alert("Length must be 8-128 characters");
   return;
 }
 
@@ -30,7 +30,10 @@ var hasNumeric = confirm ("Click OK to confirm using numeric characters");
 var hasSpecial = confirm ("Click OK to confirm including special characters");
 var hasLowers = confirm ("Click OK to confirm using lowercase characters");
 
-var passwordCharacters = [];
+while (!(hasUppers || hasNumeric || hasSpecial || hasLowers)) {
+  alert("You must select at least one character type!");
+
+  var passwordCharacters = [];
 
 if (hasUppers){
   passwordCharacters = passwordCharacters.concat(upperLetters);
@@ -47,6 +50,8 @@ if (hasSpecial) {
 if (hasLowers) {
   passwordCharacters.concat(lowerLetters);
 }  
+
+
 
 for(var i = 0; i < length; i++) {
   var rand = Math.floor(Math.random() * passwordCharacters.length)
