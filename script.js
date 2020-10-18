@@ -32,7 +32,7 @@ var hasLowers = confirm ("Click OK to confirm using lowercase characters");
 
 while (!(hasUppers || hasNumeric || hasSpecial || hasLowers)) {
   alert("You must select at least one character type!");
-
+}
   var passwordCharacters = [];
 
 if (hasUppers){
@@ -52,7 +52,6 @@ if (hasLowers) {
 }  
 
 
-
 for(var i = 0; i < length; i++) {
   var rand = Math.floor(Math.random() * passwordCharacters.length)
   randomPassword = randomPassword + passwordCharacters[rand]
@@ -62,4 +61,4 @@ for(var i = 0; i < length; i++) {
 return randomPassword
 }
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword); 
