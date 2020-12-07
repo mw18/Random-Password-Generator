@@ -1,4 +1,4 @@
-# mward_pwgenerator
+# Random Password Generator
 password generator
 
 Click the button to generate a password
